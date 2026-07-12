@@ -1,0 +1,1159 @@
+{
+  "rumors": [
+    {
+      "id": 1,
+      "template": "{subject} bribed someone on the scholarship committee.",
+      "truth": "False",
+      "severity": "Severe",
+      "category": "financial_academic"
+    },
+    {
+      "id": 2,
+      "template": "{subject} avoids every dorm event that serves alcohol, without ever saying why.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "substance_health"
+    },
+    {
+      "id": 3,
+      "template": "{subject}'s cloud storage synced to the wrong device and now everyone's seen it.",
+      "truth": "False",
+      "severity": "High",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 4,
+      "template": "{subject} spread a rumor about {other} cheating just to get back with them.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "romantic"
+    },
+    {
+      "id": 5,
+      "template": "{subject} is quietly job-hunting behind their team's back before finals even end.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "career_ambition"
+    },
+    {
+      "id": 6,
+      "template": "{subject} still hasn't returned the hoodie they borrowed in September.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 7,
+      "template": "{subject} has a standing weekly appointment they refuse to talk about.",
+      "truth": "Semi-True",
+      "severity": "Low",
+      "category": "substance_health"
+    },
+    {
+      "id": 8,
+      "template": "{subject} is secretly supporting a baby they had at 16, and it's why they're always broke.",
+      "truth": "Semi-True",
+      "severity": "High",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 9,
+      "template": "{subject} takes the last of the shared snacks and never restocks them.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 10,
+      "template": "{subject} used student government funds to pay for a personal trip.",
+      "truth": "Semi-True",
+      "severity": "High",
+      "category": "financial_academic"
+    },
+    {
+      "id": 11,
+      "template": "{subject} only started dating {other} to get closer to their roommate.",
+      "truth": "False",
+      "severity": "Medium",
+      "category": "romantic"
+    },
+    {
+      "id": 12,
+      "template": "{subject} made a group chat specifically to talk about {other} behind their back.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 13,
+      "template": "{subject} used a connection to skip the waitlist for a competitive class.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "career_ambition"
+    },
+    {
+      "id": 14,
+      "template": "{subject} is being pressured by their family to give up the baby for adoption.",
+      "truth": "Semi-True",
+      "severity": "High",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 15,
+      "template": "{subject} still has access to their ex's social media and never logged out.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 16,
+      "template": "{subject} RSVP'd yes just so they could bail last minute, again.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 17,
+      "template": "{subject} missed two weeks of classes for what they're calling 'a family thing,' but they were seen coming out of a women's clinic.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 18,
+      "template": "{subject} recently found their biological parents through a DNA test, and it's not who they expected.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 19,
+      "template": "{subject}'s scholarship got pulled after someone reported their grades were faked.",
+      "truth": "True",
+      "severity": "High",
+      "category": "financial_academic"
+    },
+    {
+      "id": 20,
+      "template": "{subject} takes credit for planning events they showed up ten minutes late to.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 21,
+      "template": "{subject} broke up with {other} over text and blocked them everywhere.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "romantic"
+    },
+    {
+      "id": 22,
+      "template": "{subject}'s side hustle is writing essays for high schoolers for cash.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "financial_academic"
+    },
+    {
+      "id": 23,
+      "template": "{subject} keeps bringing up a mistake {other} made months ago.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 24,
+      "template": "{subject}'s old posts from freshman year are extremely not okay.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 25,
+      "template": "{subject}'s 'stomach flu' has lasted three weeks and shows no signs of stopping.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 26,
+      "template": "{subject} and {other} both think they might be the father of the same pregnancy.",
+      "truth": "Semi-True",
+      "severity": "Severe",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 27,
+      "template": "{subject}'s 'allergy medicine' is definitely not allergy medicine.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "substance_health"
+    },
+    {
+      "id": 28,
+      "template": "{subject} has been liking every single one of their ex's old photos at 2am.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 29,
+      "template": "{subject} has been overcharging people for rides to the airport.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "financial_academic"
+    },
+    {
+      "id": 30,
+      "template": "{subject} has been quietly building a case against their own club president.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "career_ambition"
+    },
+    {
+      "id": 31,
+      "template": "{subject} is threatening to go public with an old scandal if they don't get the promotion.",
+      "truth": "False",
+      "severity": "Severe",
+      "category": "career_ambition"
+    },
+    {
+      "id": 32,
+      "template": "{subject} switched seats in class just to avoid saying hi to {other}.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 33,
+      "template": "{subject} posts vague callouts online that are obviously about {other}.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 34,
+      "template": "{subject} had an abortion over winter break and hasn't told the father.",
+      "truth": "True",
+      "severity": "High",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 35,
+      "template": "{subject} pretends not to remember people's names on purpose.",
+      "truth": "False",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 36,
+      "template": "{subject} borrowed money from half the dorm and has no plan to pay anyone back.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "financial_academic"
+    },
+    {
+      "id": 37,
+      "template": "{subject} is in love with {other}, but {other} has no idea.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "romantic"
+    },
+    {
+      "id": 38,
+      "template": "{subject} has been buying prescription stimulants off other students during finals.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "substance_health"
+    },
+    {
+      "id": 39,
+      "template": "{subject} is planning to keep the pregnancy a secret until after finals.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 40,
+      "template": "{subject} promised {other} a leadership spot just to get their vote.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "career_ambition"
+    },
+    {
+      "id": 41,
+      "template": "{subject} is running a fake tutoring service that just gives out the answer key.",
+      "truth": "True",
+      "severity": "High",
+      "category": "financial_academic"
+    },
+    {
+      "id": 42,
+      "template": "{subject} has never actually met the person they call their 'partner' in person.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "romantic"
+    },
+    {
+      "id": 43,
+      "template": "{subject} got someone else to take their entrance exam for them.",
+      "truth": "False",
+      "severity": "Severe",
+      "category": "financial_academic"
+    },
+    {
+      "id": 44,
+      "template": "{subject}'s DMs got leaked and it's worse than anyone expected.",
+      "truth": "Semi-True",
+      "severity": "High",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 45,
+      "template": "{subject} and {other} are pretending to hate each other, but they've been together for months.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "romantic"
+    },
+    {
+      "id": 46,
+      "template": "{subject}'s 'study group' is actually a subscription service they charge people for.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "financial_academic"
+    },
+    {
+      "id": 47,
+      "template": "{subject} has been unusually secretive about a doctor they keep seeing off campus.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "substance_health"
+    },
+    {
+      "id": 48,
+      "template": "{subject} has been telling people they're 'basically dating' someone who's never heard of them.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 49,
+      "template": "{subject} has three unpaid parking tickets under someone else's name.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "financial_academic"
+    },
+    {
+      "id": 50,
+      "template": "{subject} is the product of an affair their mom had, and their legal father doesn't know.",
+      "truth": "False",
+      "severity": "Severe",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 51,
+      "template": "{subject} is selling their prescription meds to cover rent.",
+      "truth": "Semi-True",
+      "severity": "High",
+      "category": "substance_health"
+    },
+    {
+      "id": 52,
+      "template": "{subject} secretly failed the class everyone thinks they aced.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "financial_academic"
+    },
+    {
+      "id": 53,
+      "template": "{subject} only apologized because everyone was watching.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 54,
+      "template": "{subject} has been sneaking into {other}'s dorm after curfew for weeks.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "romantic"
+    },
+    {
+      "id": 55,
+      "template": "{subject} has a drinking habit that's gotten a lot worse since midterms.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "substance_health"
+    },
+    {
+      "id": 56,
+      "template": "{subject} only recycles bottles when someone's watching.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 57,
+      "template": "{subject}'s family cut them off financially the same week they announced their major change.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 58,
+      "template": "{subject} screenshots everything and has a whole archive on everyone.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 59,
+      "template": "{subject} was asked to leave a party for being visibly out of it.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "substance_health"
+    },
+    {
+      "id": 60,
+      "template": "{subject} has a secret ranking of the dorm's best-dressed people, and it's brutal.",
+      "truth": "False",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 61,
+      "template": "{subject} faked a whole relationship for a class project and it got out of hand.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "romantic"
+    },
+    {
+      "id": 62,
+      "template": "{subject} has been quietly skimming money from the dorm fundraiser.",
+      "truth": "Semi-True",
+      "severity": "High",
+      "category": "financial_academic"
+    },
+    {
+      "id": 63,
+      "template": "{subject} has been taking credit for a joke that isn't theirs.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 64,
+      "template": "{subject} is still texting their ex while dating {other}.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "romantic"
+    },
+    {
+      "id": 65,
+      "template": "{subject} has been using a tracking app to see where {other} goes at night.",
+      "truth": "False",
+      "severity": "High",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 66,
+      "template": "{subject} accepted money to change a grade on someone's behalf.",
+      "truth": "False",
+      "severity": "Severe",
+      "category": "financial_academic"
+    },
+    {
+      "id": 67,
+      "template": "{subject} has been reselling stolen textbooks from the campus bookstore.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "financial_academic"
+    },
+    {
+      "id": 68,
+      "template": "{subject} has been talking about starting a podcast for two years and never has.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 69,
+      "template": "{subject} and {other} are pretending they don't know each other, but they're actually half-siblings from the same absent father.",
+      "truth": "Semi-True",
+      "severity": "High",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 70,
+      "template": "{subject} keeps 'forgetting' to pay their share of the group gift.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 71,
+      "template": "{subject} is secretly interviewing at a company that competes with their mentor's.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "career_ambition"
+    },
+    {
+      "id": 72,
+      "template": "{subject} and {other}'s 'friendship' is definitely something more.",
+      "truth": "Semi-True",
+      "severity": "Low",
+      "category": "romantic"
+    },
+    {
+      "id": 73,
+      "template": "{subject} promised to keep a secret in exchange for a spot on the committee.",
+      "truth": "False",
+      "severity": "High",
+      "category": "career_ambition"
+    },
+    {
+      "id": 74,
+      "template": "{subject} pretends to hate reality TV but has seen every episode twice.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 75,
+      "template": "{subject} has been low-key competing with their own best friend for attention.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "petty_social"
+    },
+    {
+      "id": 76,
+      "template": "{subject} has a finsta where they talk about everyone in the dorm.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 77,
+      "template": "{subject} threw a group project under the bus in the interview to make themselves look better.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "career_ambition"
+    },
+    {
+      "id": 78,
+      "template": "{subject} runs a gossip account that everyone reads but nobody admits to following.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 79,
+      "template": "{subject} and {other} hooked up once and have been awkwardly avoiding each other since.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "romantic"
+    },
+    {
+      "id": 80,
+      "template": "{subject} copies everything {other} wears within a week.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 81,
+      "template": "{subject} is planning an abortion they haven't told anyone about, not even {other}.",
+      "truth": "True",
+      "severity": "High",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 82,
+      "template": "{subject} has a drawer full of pill bottles with someone else's name on them.",
+      "truth": "False",
+      "severity": "High",
+      "category": "substance_health"
+    },
+    {
+      "id": 83,
+      "template": "{subject} has been quietly feuding with their roommate over dishes for a month.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 84,
+      "template": "{subject} has been telling people they're an only child, but they actually have a sibling in foster care.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 85,
+      "template": "{subject} has missed three morning classes in a row and won't say why.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "substance_health"
+    },
+    {
+      "id": 86,
+      "template": "{subject} has been catfishing people online under a fake name.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "romantic"
+    },
+    {
+      "id": 87,
+      "template": "{subject} has a shaky hand they're trying very hard to hide.",
+      "truth": "False",
+      "severity": "Medium",
+      "category": "substance_health"
+    },
+    {
+      "id": 88,
+      "template": "{subject} pretended to lose {other}'s number so they wouldn't have to hang out.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 89,
+      "template": "{subject} has been avoiding {other} ever since the group project.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 90,
+      "template": "{subject} told {other} they loved them, but they were saying it to someone else the same week.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "romantic"
+    },
+    {
+      "id": 91,
+      "template": "{subject}'s parents found out about the abortion and haven't spoken to them since.",
+      "truth": "True",
+      "severity": "High",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 92,
+      "template": "{subject} only likes people's posts when they're trying to make someone jealous.",
+      "truth": "Semi-True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 93,
+      "template": "{subject}'s roommate found empty bottles hidden all over their side of the room.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "substance_health"
+    },
+    {
+      "id": 94,
+      "template": "{subject} got left out of the group chat on purpose.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 95,
+      "template": "{subject} has documents that could get someone removed from student government.",
+      "truth": "False",
+      "severity": "Severe",
+      "category": "career_ambition"
+    },
+    {
+      "id": 96,
+      "template": "{subject} only got invited to the party so people could keep an eye on them.",
+      "truth": "False",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 97,
+      "template": "{subject} told {other} they were pregnant just to see how they'd react, and it wasn't true.",
+      "truth": "False",
+      "severity": "High",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 98,
+      "template": "{subject} has an anonymous account dedicated entirely to subtweeting the dorm.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 99,
+      "template": "{subject} left {other} on read for four days and then acted normal.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 100,
+      "template": "{subject} has a whole spreadsheet ranking people in the dorm.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 101,
+      "template": "{subject} made a fake dating profile just to see who {other} would talk to.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 102,
+      "template": "{subject} has a whole secret second boyfriend/girlfriend off campus.",
+      "truth": "Semi-True",
+      "severity": "High",
+      "category": "romantic"
+    },
+    {
+      "id": 103,
+      "template": "{subject} swore off drinking after last semester, but nobody believes it'll stick.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "substance_health"
+    },
+    {
+      "id": 104,
+      "template": "{subject} only talks to people when they need something.",
+      "truth": "Semi-True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 105,
+      "template": "{subject} got a professor to write a recommendation letter they didn't earn.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "career_ambition"
+    },
+    {
+      "id": 106,
+      "template": "{subject}'s grades tanked the same month their prescription got 'lost.'",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "substance_health"
+    },
+    {
+      "id": 107,
+      "template": "{subject} told everyone they were 'too busy' to help, then showed up to the party.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 108,
+      "template": "{subject} has a second, secret bank account nobody knows about.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "financial_academic"
+    },
+    {
+      "id": 109,
+      "template": "{subject} is secretly seeing their professor outside of class.",
+      "truth": "False",
+      "severity": "Severe",
+      "category": "romantic"
+    },
+    {
+      "id": 110,
+      "template": "{subject} keeps disappearing for hours and coming back looking rough.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "substance_health"
+    },
+    {
+      "id": 111,
+      "template": "{subject} was seen buying way more cold medicine than any cold requires.",
+      "truth": "False",
+      "severity": "Low",
+      "category": "substance_health"
+    },
+    {
+      "id": 112,
+      "template": "{subject} got locked out of their own account after someone guessed their password.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 113,
+      "template": "{subject} and {other} are technically still married from a drunken Vegas trip.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "romantic"
+    },
+    {
+      "id": 114,
+      "template": "{subject} took a job offer meant for someone else after a mix-up nobody corrected.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "career_ambition"
+    },
+    {
+      "id": 115,
+      "template": "{subject}'s mom showed up on campus crying, and nobody knows why yet.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 116,
+      "template": "{subject}'s ex moved into the same dorm just to be closer to them again.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "romantic"
+    },
+    {
+      "id": 117,
+      "template": "{subject} had a miscarriage last month and told everyone it was 'just stress.'",
+      "truth": "True",
+      "severity": "High",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 118,
+      "template": "{subject} got caught reusing an old essay and blamed a computer glitch.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "financial_academic"
+    },
+    {
+      "id": 119,
+      "template": "{subject} forged a professor's signature to get out of a failing grade.",
+      "truth": "True",
+      "severity": "High",
+      "category": "financial_academic"
+    },
+    {
+      "id": 120,
+      "template": "{subject} disappeared for a whole weekend and came back not talking about it.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "substance_health"
+    },
+    {
+      "id": 121,
+      "template": "{subject}'s parents are getting a divorce, and it's because their dad has a whole second family in another state.",
+      "truth": "True",
+      "severity": "High",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 122,
+      "template": "{subject}'s 'private' story isn't as private as they think.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 123,
+      "template": "{subject} proposed to {other} in private, and {other} said no.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "romantic"
+    },
+    {
+      "id": 124,
+      "template": "{subject} checked into a program over the summer and told everyone it was 'travel.'",
+      "truth": "True",
+      "severity": "High",
+      "category": "substance_health"
+    },
+    {
+      "id": 125,
+      "template": "{subject} broke up a long relationship between {other} and someone else, on purpose.",
+      "truth": "False",
+      "severity": "High",
+      "category": "romantic"
+    },
+    {
+      "id": 126,
+      "template": "{subject} only joined the club to get closer to who's running it.",
+      "truth": "Semi-True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 127,
+      "template": "{subject} keeps a list ranking everyone they've dated on campus.",
+      "truth": "Semi-True",
+      "severity": "Low",
+      "category": "romantic"
+    },
+    {
+      "id": 128,
+      "template": "{subject} has been sending money home every month and won't say why.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 129,
+      "template": "{subject} has been reading {other}'s texts over their shoulder for weeks.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 130,
+      "template": "{subject} is playing both sides of the student council election.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "career_ambition"
+    },
+    {
+      "id": 131,
+      "template": "{subject} let {other} take the fall for a decision that was actually theirs.",
+      "truth": "True",
+      "severity": "High",
+      "category": "career_ambition"
+    },
+    {
+      "id": 132,
+      "template": "{subject}'s parents pulled them out for a month and wouldn't explain why.",
+      "truth": "True",
+      "severity": "High",
+      "category": "substance_health"
+    },
+    {
+      "id": 133,
+      "template": "{subject} has been taking credit for {other}'s research in front of professors.",
+      "truth": "True",
+      "severity": "High",
+      "category": "career_ambition"
+    },
+    {
+      "id": 134,
+      "template": "{subject} has been leading on three different people at once.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "romantic"
+    },
+    {
+      "id": 135,
+      "template": "{subject} got the internship because their family knows the hiring manager.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "career_ambition"
+    },
+    {
+      "id": 136,
+      "template": "{subject} keeps borrowing money right after payday, every single time.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "substance_health"
+    },
+    {
+      "id": 137,
+      "template": "{subject} promised the club presidency to three different people.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "career_ambition"
+    },
+    {
+      "id": 138,
+      "template": "{subject} only pretends to be single because they're actually already engaged back home.",
+      "truth": "False",
+      "severity": "High",
+      "category": "romantic"
+    },
+    {
+      "id": 139,
+      "template": "{subject} is quietly asking around about adoption agencies.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 140,
+      "template": "{subject} used student council funds to cover a personal debt.",
+      "truth": "Semi-True",
+      "severity": "High",
+      "category": "financial_academic"
+    },
+    {
+      "id": 141,
+      "template": "{subject} has been using a friend's login to spy on a group chat they got removed from.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 142,
+      "template": "{subject} has been selling access to a leaked final exam.",
+      "truth": "Semi-True",
+      "severity": "Severe",
+      "category": "financial_academic"
+    },
+    {
+      "id": 143,
+      "template": "{subject}'s search history got left open on a shared computer.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 144,
+      "template": "{subject} is holding a secret meeting to plan a leadership takeover.",
+      "truth": "Semi-True",
+      "severity": "High",
+      "category": "career_ambition"
+    },
+    {
+      "id": 145,
+      "template": "{subject} paid someone to write their entire senior thesis.",
+      "truth": "True",
+      "severity": "Severe",
+      "category": "financial_academic"
+    },
+    {
+      "id": 146,
+      "template": "{subject} has been 'borrowing' the communal charger permanently.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 147,
+      "template": "{subject} is running a secret campaign to unseat the current dorm president.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "career_ambition"
+    },
+    {
+      "id": 148,
+      "template": "{subject} has a whole ranking of who's allowed to sit where at dinner.",
+      "truth": "False",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 149,
+      "template": "{subject} took credit for a group project nobody else got to finish.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "financial_academic"
+    },
+    {
+      "id": 150,
+      "template": "{subject} used a fake sob story to get out of paying rent to their roommate.",
+      "truth": "False",
+      "severity": "Medium",
+      "category": "financial_academic"
+    },
+    {
+      "id": 151,
+      "template": "{subject}'s sibling secretly transferred here just to keep an eye on them.",
+      "truth": "False",
+      "severity": "Medium",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 152,
+      "template": "{subject} is the reason their older sibling got disowned from the family will.",
+      "truth": "False",
+      "severity": "High",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 153,
+      "template": "{subject} paid for their own abortion in cash so it wouldn't show up on their parents' insurance.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 154,
+      "template": "{subject} has screenshots of a conversation {other} thought was deleted.",
+      "truth": "Semi-True",
+      "severity": "Medium",
+      "category": "digital_privacy"
+    },
+    {
+      "id": 155,
+      "template": "{subject} leaked {other}'s business idea to a rival group.",
+      "truth": "False",
+      "severity": "High",
+      "category": "career_ambition"
+    },
+    {
+      "id": 156,
+      "template": "{subject} inherited a large sum from a grandparent nobody knew they were close to.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 157,
+      "template": "{subject} claims they 'don't care about drama' and somehow knows all of it.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "petty_social"
+    },
+    {
+      "id": 158,
+      "template": "{subject} and {other} broke up, but nobody's told their friend group yet.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "romantic"
+    },
+    {
+      "id": 159,
+      "template": "{subject} is dating {other}'s ex behind their back.",
+      "truth": "True",
+      "severity": "Medium",
+      "category": "romantic"
+    },
+    {
+      "id": 160,
+      "template": "{subject}'s 'internship' is actually a pyramid scheme they're recruiting people into.",
+      "truth": "True",
+      "severity": "High",
+      "category": "financial_academic"
+    },
+    {
+      "id": 161,
+      "template": "{subject} sold their notes to a rival dorm right before the final.",
+      "truth": "True",
+      "severity": "Low",
+      "category": "financial_academic"
+    },
+    {
+      "id": 162,
+      "template": "{subject} sold fake concert tickets to half the dorm.",
+      "truth": "False",
+      "severity": "Medium",
+      "category": "financial_academic"
+    },
+    {
+      "id": 163,
+      "template": "{subject} found out mid-semester that they were adopted, and their parents never planned to tell them.",
+      "truth": "True",
+      "severity": "High",
+      "category": "pregnancy_family"
+    },
+    {
+      "id": 164,
+      "template": "{subject} cheated on {other} during winter break and never confessed.",
+      "truth": "True",
+      "severity": "High",
+      "category": "romantic"
+    },
+    {
+      "id": 165,
+      "template": "{subject} used insider information from a professor to get ahead on an assignment.",
+      "truth": "Semi-True",
+      "severity": "High",
+      "category": "career_ambition"
+    }
+  ]
+}
