@@ -19,6 +19,7 @@ import os
 import time
 import random
 import sqlite3
+import json
 
 from flask import Flask, render_template, request, redirect, url_for, g, session, jsonify
 from flask_socketio import SocketIO
@@ -40,6 +41,8 @@ ROUND_DURATION = 75   # seconds for the action phase
 VOTE_DURATION = 45    # seconds for the voting phase
 
 SEVERITY_TIERS = ["Low", "Medium", "High", "Severe"]
+RUMOR_BANK_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "rumors.json")
+RUMORS_PER_GAME = 8  # how many rumors get pulled from the bank each time a game starts
 
 # =====================================================
 # DATABASE
@@ -206,19 +209,60 @@ def tally_votes_and_advance(db, state):
     start_new_round(db, state)
 
 
+
+def load_rumor_templates():
+    """Load every rumor template from the JSON bank on disk. Each template
+    uses {subject} (and sometimes {other}) as a placeholder for a real
+    player's name, filled in fresh every time a game starts."""
+    with open(RUMOR_BANK_PATH) as f:
+        return json.load(f)["rumors"]
+
+
+def fill_template(template, players):
+    """Pick a random player as the subject of a rumor (and a second,
+    different player for templates that need one), then substitute
+    their names into the template text."""
+    subject = random.choice(players)
+    text = template.replace("{subject}", subject["name"])
+    other_name = None
+
+    if "{other}" in template:
+        remaining = [p for p in players if p["id"] != subject["id"]]
+        if remaining:
+            other = random.choice(remaining)
+            text = text.replace("{other}", other["name"])
+            other_name = other["name"]
+
+    return text, subject["name"], other_name
+
+
 def initialize_rumors(db):
+    """Pull a fresh, randomized set of rumors from the JSON bank for this
+    game, substituting in whoever actually joined as the subjects. This
+    means the pool of possible rumors is much bigger than any one game,
+    so replaying doesn't turn up the same set every time."""
     db.execute("DELETE FROM rumors")
-    sample_rumors = [
-        ("Maya's been quietly asking about maternity leave.", "Maya", "Semi-True", "Medium"),
-        ("Sade's 'flu' is a lot more convenient than it looks.", "Sade", "True", "High"),
-        ("Chris signed off on invoices nobody can find receipts for.", "Chris", "Semi-True", "High"),
-        ("Jordan's been seen leaving Sade's place at 6am. Every day.", "Jordan", "True", "Low"),
-        ("Zara's app has been quietly logging everyone's location.", "Zara", "Semi-True", "Medium"),
-    ]
-    for text, subject, truth, severity in sample_rumors:
+
+    players = [dict(p) for p in db.execute("SELECT * FROM players").fetchall()]
+    if not players:
+        return
+
+    templates = load_rumor_templates()
+
+    # If there's only one player (e.g. testing solo), skip templates that
+    # need a second distinct person to name.
+    if len(players) < 2:
+        templates = [t for t in templates if "{other}" not in t["template"]]
+
+    count = min(RUMORS_PER_GAME, len(templates))
+    chosen = random.sample(templates, count)
+
+    for t in chosen:
+        text, subject_name, other_name = fill_template(t["template"], players)
+        subject_display = subject_name if not other_name else f"{subject_name} & {other_name}"
         db.execute(
             "INSERT INTO rumors (text, subject, truth, base_severity, severity) VALUES (?, ?, ?, ?, ?)",
-            (text, subject, truth, severity, severity),
+            (text, subject_display, t["truth"], t["severity"], t["severity"]),
         )
     db.commit()
 
