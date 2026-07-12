@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% block title %}Rumor — Table{% endblock %}
+{% block content %}
+
+<div class="status-bar">
+  <span class="phase" id="phase-label">—</span>
+  <span class="timer mono" id="timer-label">--</span>
+</div>
+
+<div id="secret-box" class="rumor" style="display:none; border-left-color: var(--gaslight);">
+  <div class="subject">your secret objective</div>
+  <p class="text" id="secret-text" style="font-size: 1rem;">—</p>
+</div>
+
+<div id="host-panel" class="form-card" style="display:none; margin-bottom: 1.5rem;">
+  <div class="subject" style="font-family:'Space Mono',monospace; text-transform:uppercase; font-size:0.7rem; color: var(--paper-dim); margin-bottom: 0.8rem;">Host controls</div>
+  <div style="display:flex; gap:0.6rem; flex-wrap: wrap;">
+    <a href="{{ url_for('host_end_round') }}" class="btn btn-investigate" style="text-decoration:none; text-align:center;">End round early</a>
+    <a href="{{ url_for('host_end_game') }}" class="btn btn-spread" style="text-decoration:none; text-align:center;">End game</a>
+    <a href="{{ url_for('host_reset') }}" class="btn" style="text-decoration:none; text-align:center; background:transparent; border:1px solid var(--line); color: var(--paper-dim);" onclick="return confirm('Reset the whole lobby? Everyone will need to rejoin.');">Reset lobby</a>
+  </div>
+</div>
+
+<div id="join-phase" style="display:none;">
+  <div class="empty-state">
+    Waiting for the table to fill up.<br />
+    <a href="{{ url_for('host_start_game') }}" class="submit-btn host-only-start" style="display:inline-block; text-decoration:none; margin-top:1rem;">Start the game</a>
+  </div>
+</div>
+
+<div id="vote-phase" style="display:none;">
+  <div class="empty-state">
+    The floor is closed. Time to decide who played this round best.<br />
+    <a href="{{ url_for('vote') }}" class="submit-btn" style="display:inline-block; text-decoration:none; margin-top:1rem;">Cast your vote</a>
+  </div>
+</div>
+
+<div id="action-phase" style="display:none;">
+  <div class="section-label">On the table</div>
+  <div id="rumors-list"></div>
+</div>
+
+<div id="game-over-phase" style="display:none;">
+  <div class="section-label">How it ended</div>
+  <div id="objectives-reveal"></div>
+</div>
+
+<div class="section-label">Who's in the room</div>
+<div id="players-list"></div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  const ME_ID = {{ me.id }};
+  const IS_HOST = {{ 'true' if me.is_host else 'false' }};
+  const socket = io();
+
+  function fmtTime(seconds) {
+    const m = Math.floor(seconds / 60);
+    const s = seconds % 60;
+    return `${m}:${s.toString().padStart(2, "0")}`;
+  }
+
+  function renderState(state) {
+    const phaseLabel = document.getElementById("phase-label");
+    const timerLabel = document.getElementById("timer-label");
+    const joinPhase = document.getElementById("join-phase");
+    const votePhase = document.getElementById("vote-phase");
+    const actionPhase = document.getElementById("action-phase");
+    const gameOverPhase = document.getElementById("game-over-phase");
+    const rumorsList = document.getElementById("rumors-list");
+    const playersList = document.getElementById("players-list");
+    const hostPanel = document.getElementById("host-panel");
+    const secretBox = document.getElementById("secret-box");
+
+    phaseLabel.textContent = `Round ${state.round_number} · ${state.phase.replace("_", " ")}`;
+    timerLabel.textContent = state.phase === "GAME_OVER" ? "" : fmtTime(state.remaining_time);
+    timerLabel.classList.toggle("low", state.remaining_time <= 10 && state.phase === "ACTION");
+
+    joinPhase.style.display = state.phase === "JOIN" ? "block" : "none";
+    votePhase.style.display = state.phase === "VOTE" ? "block" : "none";
+    actionPhase.style.display = state.phase === "ACTION" ? "block" : "none";
+    gameOverPhase.style.display = state.phase === "GAME_OVER" ? "block" : "none";
+    hostPanel.style.display = IS_HOST && state.phase !== "JOIN" ? "block" : "none";
+    secretBox.style.display = (state.phase === "ACTION" || state.phase === "VOTE") ? "block" : "none";
+
+    document.querySelectorAll(".host-only-start").forEach(el => {
+      el.style.display = IS_HOST ? "inline-block" : "none";
+    });
+
+    const me = state.players.find(p => p.id === ME_ID);
+    const alreadyActed = me ? !!me.acted_this_round : false;
+
+    // Rumors
+    rumorsList.innerHTML = "";
+    if (state.rumors.length === 0) {
+      rumorsList.innerHTML = `<div class="empty-state">No rumors left standing. Silence is its own kind of story.</div>`;
+    }
+    state.rumors.forEach(r => {
+      const card = document.createElement("div");
+      card.className = "rumor";
+      card.innerHTML = `
+        <div class="subject">about ${r.subject}</div>
+        <p class="text">"${r.text}"</p>
+        <div class="meta">
+          <span class="tag severity-${r.severity.toLowerCase()}">${r.severity}</span>
+          <span class="tag">Popularity ${r.popularity}</span>
+        </div>
+        <div class="actions">
+          <form method="POST" action="/spread" style="flex:1;">
+            <input type="hidden" name="rumor_id" value="${r.id}" />
+            <button class="btn btn-spread" type="submit" ${alreadyActed ? "disabled" : ""}>Spread</button>
+          </form>
+          <form method="POST" action="/investigate" style="flex:1;">
+            <input type="hidden" name="rumor_id" value="${r.id}" />
+            <button class="btn btn-investigate" type="submit" ${alreadyActed ? "disabled" : ""}>Investigate</button>
+          </form>
+        </div>
+      `;
+      rumorsList.appendChild(card);
+    });
+
+    // Players
+    playersList.innerHTML = "";
+    state.players.slice().sort((a, b) => b.reputation - a.reputation).forEach(p => {
+      const row = document.createElement("div");
+      row.className = "player-row";
+      row.innerHTML = `
+        <img class="avatar" src="${p.image || ''}" onerror="this.style.background='var(--line)'; this.src='';" />
+        <div class="player-info">
+          <div class="player-name">${p.name}${p.is_host ? ' <span class="you-tag" style="color:var(--paper-dim);">host</span>' : ''}${p.id === ME_ID ? '<span class="you-tag">you</span>' : ''}</div>
+          <div class="player-stats">
+            <span>Rep ${p.reputation}</span>
+            <span>Inf ${p.influence}</span>
+            <span class="snake">Snake ${p.snake_score}</span>
+            <span class="honest">Honest ${p.honesty_score}</span>
+          </div>
+        </div>
+      `;
+      playersList.appendChild(row);
+    });
+
+    // Game over reveal
+    if (state.phase === "GAME_OVER") {
+      const revealEl = document.getElementById("objectives-reveal");
+      const topSnake = state.players.slice().sort((a, b) => b.snake_score - a.snake_score)[0];
+      const topHonest = state.players.slice().sort((a, b) => b.honesty_score - a.honesty_score)[0];
+
+      let html = `
+        <div class="rumor" style="border-left-color: var(--blood);">
+          <div class="subject">top snake</div>
+          <p class="text">${topSnake ? topSnake.name : "—"} — ${topSnake ? topSnake.snake_score : 0} snake points</p>
+        </div>
+        <div class="rumor" style="border-left-color: var(--gaslight);">
+          <div class="subject">top honest player</div>
+          <p class="text">${topHonest ? topHonest.name : "—"} — ${topHonest ? topHonest.honesty_score : 0} honesty points</p>
+        </div>
+        <div class="section-label">Secret objectives, revealed</div>
+      `;
+      state.objectives_reveal.forEach(o => {
+        html += `
+          <div class="rumor" style="border-left-color: ${o.completed ? "var(--gaslight)" : "var(--line)"};">
+            <div class="subject">${o.player_name} ${o.completed ? "— completed" : "— fell short"}</div>
+            <p class="text" style="font-size:1rem;">${o.text}</p>
+          </div>
+        `;
+      });
+      revealEl.innerHTML = html;
+    }
+  }
+
+  socket.on("game-state", renderState);
+
+  // Render immediately with the data the server sent on page load,
+  // so the page isn't blank while waiting for the first socket push.
+  renderState({{ state | tojson }});
+
+  // Fetch the private secret objective over a normal authenticated request -
+  // this never rides the broadcast socket channel.
+  fetch("/my-objective").then(r => r.json()).then(data => {
+    if (data.text) {
+      document.getElementById("secret-text").textContent = data.text;
+    } else {
+      document.getElementById("secret-box").style.display = "none";
+    }
+  });
+</script>
+{% endblock %}

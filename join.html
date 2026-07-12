@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Rumor — Join{% endblock %}
+{% block content %}
+<div class="form-card">
+  {% if error %}
+  <p style="color: var(--blood-bright); font-weight: 700; margin-top: 0;">{{ error }}</p>
+  {% endif %}
+  <p style="color: var(--paper-dim); font-style: italic; margin-top: 0;">
+    Everyone at the table plays the same hand: spread what you hear, or dig up what's real.
+    You can't do both in the same round.
+  </p>
+  <form method="POST" enctype="multipart/form-data">
+    <label for="name">Your name at the table</label>
+    <input type="text" id="name" name="name" required maxlength="24" placeholder="What do people call you?" />
+
+    <label for="descriptor">One line people will remember you by (optional)</label>
+    <input type="text" id="descriptor" name="descriptor" maxlength="60" placeholder="e.g. 'always knows something'" />
+
+    <label for="photo">Your photo</label>
+    <input type="file" id="photo" name="photo" accept="image/png, image/jpeg" />
+
+    <button type="submit" class="submit-btn">Take a seat</button>
+  </form>
+</div>
+{% endblock %}
